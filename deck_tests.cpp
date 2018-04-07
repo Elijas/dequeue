@@ -35,7 +35,7 @@ TEST_CASE("Deck receives the first value correctly") {
     ASSERT(d.peekLast() == 1);
 }
 
-TEST_CASE("Deck receives the second value correctly") {
+TEST_CASE("Deck receives the second value correctly to back") {
     Deck d;
     d.pushBack(1);
 
@@ -43,4 +43,14 @@ TEST_CASE("Deck receives the second value correctly") {
 
     ASSERT(d.peekFirst() == 1);
     ASSERT(d.peekLast() == 2);
+}
+
+TEST_CASE("Deck receives the second value correctly to front") {
+    Deck d;
+    d.pushFront(1);
+
+    d.pushFront(2);
+
+    ASSERT(d.peekFirst() == 2);
+    ASSERT(d.peekLast() == 1);
 }

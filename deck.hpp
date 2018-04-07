@@ -29,6 +29,8 @@ public:
     double peekLast();
 
     void pushBack(double);
+
+    void pushFront(double);
 };
 
 bool Deck::isEmpty() {
@@ -44,9 +46,7 @@ double Deck::peekLast() {
 }
 
 void Deck::pushBack(double value) {
-    int a=0;
     Node* node = new Node(value);
-    int b=1;
     if (this->isEmpty()) {
         this->first = node;
         this->last = node;
@@ -54,6 +54,17 @@ void Deck::pushBack(double value) {
     }
     this->last->connectNext(node);
     this->last = node;
+}
+
+void Deck::pushFront(double value) {
+    Node* node = new Node(value);
+    if (this->isEmpty()) {
+        this->first = node;
+        this->last = node;
+        return;
+    }
+    node->connectNext(this->first);
+    this->first = node;
 }
 
 #endif //Y1S2_ALG_SD2_DECK_H
