@@ -3,13 +3,6 @@
 #include "deck.h"
 
 int main() {
-    Node a{.data=1};
-    Node b{.data=2};
-    a.next = &b;
-    std::cout << a.next->data;
-}
-
-int main_REPL() {
     while (true) {
         std::cout << "Current deck: empty" << std::endl;
         std::cout << "Instructions: 'a' to add, 'd' to delete, 'x' to exit. "
@@ -22,8 +15,7 @@ int main_REPL() {
             std::cout << "D" << std::endl;
         else if (std::tolower(command) == 'a') {
             std::cout << "A" << std::endl;
-        }
-        else {
+        } else {
             std::cout << "Incorrect input, no operation is performed" << std::endl;
         }
     }

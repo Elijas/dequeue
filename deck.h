@@ -3,8 +3,19 @@
 
 struct Node {
     double data;
-    Node* previous = NULL;
-    Node* next = NULL;
+    Node *previous = nullptr;
+    Node *next = nullptr;
 };
+
+class Deck {
+    Node *first = nullptr;
+    Node *last = nullptr;
+public:
+    bool isEmpty();
+};
+
+bool Deck::isEmpty() {
+    return this->first == nullptr && this->last == nullptr;
+}
 
 #endif //Y1S2_ALG_SD2_DECK_H
