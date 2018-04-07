@@ -5,17 +5,13 @@ struct Node {
     double data;
     Node *previous = nullptr;
     Node *next = nullptr;
+
+    void connectNext(Node *next);
 };
 
-class Deck {
-    Node *first = nullptr;
-    Node *last = nullptr;
-public:
-    bool isEmpty();
-};
-
-bool Deck::isEmpty() {
-    return this->first == nullptr && this->last == nullptr;
+void Node::connectNext(Node *next) {
+    this->next = next;
+    next->previous = this;
 }
 
 #endif //Y1S2_ALG_SD2_DECK_H

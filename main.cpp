@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "deck.h"
+#include "deck.hpp"
 
 int main() {
     while (true) {

@@ -1,32 +1,16 @@
 #include <iostream>
 #include <cassert>
 
-#include "deck.h"
+#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#include "lib/catch.hpp"
+#include "deck.hpp"
 
-int main() {
-    //////////////////////////////////////////
-    // TEST: Nodes can hold data and be linked
-    //////////////////////////////////////////
-    //-
-
+TEST_CASE("Nodes can be linked") {
     Node a{.data=1};
     Node b{.data=2};
-    a.next = &b;
 
-    assert(a.next->data == 2);
+    a.connectNext(&b);
 
-    //////////////////////////////////////////
-    // TEST: Deck is initialized empty
-    //////////////////////////////////////////
-    //-
-
-    Deck deck;
-
-    assert(deck.isEmpty());
-
-    //////////////////////////////////////////
-    // TEST:
-    //////////////////////////////////////////
-
-
+    REQUIRE(a.next->data == 2);
+    REQUIRE(b.previous->data == 1);
 }
