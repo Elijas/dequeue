@@ -1,6 +1,15 @@
 #include <iostream>
 
+#include "deck.h"
+
 int main() {
+    Node a{.data=1};
+    Node b{.data=2};
+    a.next = &b;
+    std::cout << a.next->data;
+}
+
+int main_REPL() {
     while (true) {
         std::cout << "Current deck: empty" << std::endl;
         std::cout << "Instructions: 'a' to add, 'd' to delete, 'x' to exit. "
