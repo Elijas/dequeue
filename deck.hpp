@@ -116,7 +116,6 @@ std::string Deck::toString() {
         node = node->next;
     }
     return ss.str();
-//    return "test";
 }
 
 #endif //Y1S2_ALG_SD2_DECK_H
