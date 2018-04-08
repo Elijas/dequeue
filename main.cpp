@@ -26,7 +26,7 @@ int main() {
     Deck deck;
     std::cout << "Instructions: 'a' to add, 'd' to delete, 'x' to exit." << std::endl;
     std::cout << "Use capital letter to use dequeue's front instead of back." << std::endl;
-    for (int i = 0; i < 100; i++) {
+    while (true) {
         std::cout << "[Deck] " << deck.toString() << std::endl;
 
         char command = readLetter();
