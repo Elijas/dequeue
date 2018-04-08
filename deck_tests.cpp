@@ -35,6 +35,16 @@ TEST_CASE("Deck receives the first value correctly") {
     ASSERT(d.peekLast() == 1);
 }
 
+TEST_CASE("Deck receives the second value correctly to front") {
+    Deck d;
+    d.pushFront(1);
+
+    d.pushFront(2);
+
+    ASSERT(d.peekFirst() == 2);
+    ASSERT(d.peekLast() == 1);
+}
+
 TEST_CASE("Deck receives the second value correctly to back") {
     Deck d;
     d.pushBack(1);
@@ -45,12 +55,41 @@ TEST_CASE("Deck receives the second value correctly to back") {
     ASSERT(d.peekLast() == 2);
 }
 
-TEST_CASE("Deck receives the second value correctly to front") {
+TEST_CASE("Deck ignores deletion if deck is empty") {
     Deck d;
-    d.pushFront(1);
 
-    d.pushFront(2);
+    d.deleteLast();
+
+    ASSERT(d.isEmpty());
+}
+
+TEST_CASE("Deck deletes the single value correctly") {
+    Deck d;
+    d.pushBack(1);
+
+    d.deleteLast();
+
+    ASSERT(d.isEmpty());
+}
+
+TEST_CASE("Deck deletes the first value correctly") {
+    Deck d;
+    d.pushBack(1);
+    d.pushBack(2);
+
+    d.deleteFirst();
 
     ASSERT(d.peekFirst() == 2);
+    ASSERT(d.peekLast() == 2);
+}
+
+TEST_CASE("Deck deletes the last value correctly") {
+    Deck d;
+    d.pushBack(1);
+    d.pushBack(2);
+
+    d.deleteLast();
+
+    ASSERT(d.peekFirst() == 1);
     ASSERT(d.peekLast() == 1);
 }
