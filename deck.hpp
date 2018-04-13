@@ -49,13 +49,15 @@ bool Deck::isEmpty() {
 
 double Deck::peekFirst() {
     if (this->first == NULL)
-        throw std::range_error; // Ismetama klaida nes bandyta gauti neegzistuojanti elementa
+        throw std::range_error("Dequeue is empty"); // Ismetama klaida nes bandyta gauti neegzistuojanti elementa
+
     return this->first->data;
 }
 
 double Deck::peekLast() {
-    if (this->first == NULL)
-        throw std::range_error; // Ismetama klaida nes bandyta gauti neegzistuojanti elementa
+    if (this->last == NULL)
+        throw std::range_error("Dequeue is empty"); // Ismetama klaida nes bandyta gauti neegzistuojanti elementa
+
     return this->last->data;
 }
 
