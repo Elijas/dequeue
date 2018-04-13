@@ -19,6 +19,7 @@ double readNumber() {
     do {
         std::cout << "[Enter a number]: " << std::endl;
         std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Leidziama ivesti tik skaicius
     } while (!(std::cin >> number)); // Klaus skaiciaus tol kol bus ivestas skaicius
     return number;
 }
